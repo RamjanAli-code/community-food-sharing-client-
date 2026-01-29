@@ -71,8 +71,8 @@ Notifications: Instant feedback to users through toast notifications.
 
 ## ⚙️ Installation & Setup
 1. **Clone the repository:**
-   ```bash(server)
-   git clone https://github.com/RamjanAli-code/commuityFoodSharing-Server-.git
+   ```bash
+   git clone (server) https://github.com/RamjanAli-code/commuityFoodSharing-Server-.git
 
-  ```bash(client)
-   git clone https://github.com/RamjanAli-code/community-food-sharing-client-.git
+  ```bash
+   git clone (client)  https://github.com/RamjanAli-code/community-food-sharing-client-.git
