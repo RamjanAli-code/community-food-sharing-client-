@@ -3,6 +3,7 @@ import { Link, useNavigate, NavLink } from 'react-router-dom';
 import { getAuth } from 'firebase/auth';
 import { toast, ToastContainer } from 'react-toastify';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import logo from '../../assets/16y.webp';
 const Navbar = () => {
   const { user, setUser, loading } = useContext(AuthContext);
   const auth = getAuth();
@@ -49,7 +50,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <Link to="/"><img src="/src/assets/16y.webp" alt="" className='h-10 w-10 rounded-xl' /></Link>
+        <Link to="/"><img src={logo} alt="logo" className='h-10 w-10 rounded-xl' /></Link>
         <Link to="/" className="btn btn-ghost text-2xl">
           Food
         </Link>
