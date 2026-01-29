@@ -24,7 +24,7 @@ const AvailableFood = () => {
 
             <img src={food.image} alt={food.name} className="h-48 w-full object-cover rounded-xl"/>
             <h3 className="text-xl font-semibold mt-3">{food.name}</h3>
-            <div className="flex items-center gap-2 mt-1">
+            <div className="flex items-center gap-2 mt-2">
               <img src={food.donator?.photoURL} className="w-8 h-8 rounded-full" alt="donator"/>
               <span>{food.donator?.name}</span>
             </div>
