@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import pic1 from "../../assets/ded-m.avif";
-import pic2 from "../../download.jpeg";
+import pic2 from "../../assets/download.jpeg";
 import pic3 from "../../assets/american.avif";
 const Home = () => {
   const [featuredFoods, setFeaturedFoods] = useState([]);
