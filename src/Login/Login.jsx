@@ -68,14 +68,14 @@ const Login = () => {
           </h2>
           <form onSubmit={handleSubmit}>
             {isRegister && (
-              <input type="text" placeholder="Name" className="input input-bordered w-full mb-3 bg-gray-200" value={name}
+              <input type="text" placeholder=" Enter Name" className="input input-bordered w-full mb-3 bg-gray-200" value={name}
                 onChange={(e) => setName(e.target.value)} />
             )}
-            <input type="email" placeholder="Email" className="input input-bordered w-full mb-3 bg-gray-200" value={email}
+            <input type="email" placeholder=" Enter Email" className="input input-bordered w-full mb-3 bg-gray-200" value={email}
               onChange={(e) => setEmail(e.target.value)} required />
             <PasswordLogin password={password} setPassword={setPassword} />
             {isRegister && (
-              <input type="text" placeholder="Photo URL" className="input input-bordered w-full mb-3 bg-gray-200" value={photoURL}
+              <input type="text" placeholder="Enter Photo URL" className="input input-bordered w-full mb-3 bg-gray-200" value={photoURL}
                 onChange={(e) => setPhotoURL(e.target.value)} />
             )}
             <button type="submit" className="btn btn-primary w-full">
