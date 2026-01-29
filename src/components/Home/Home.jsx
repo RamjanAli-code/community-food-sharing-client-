@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import pic1 from "../../assets/ded-m.avif";
+import pic2 from "../../download.jpeg";
+import pic3 from "../../assets/american.avif";
 const Home = () => {
   const [featuredFoods, setFeaturedFoods] = useState([]);
   const apiUrl = "https://community-food-sharing-server-livid.vercel.app/available-foods";
@@ -69,17 +72,17 @@ const Home = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
           <div>
-            <img src="/src/assets/ded-m.avif" className="mx-auto h-20" />
+            <img src={pic1} className="mx-auto h-20" />
             <h3 className="text-xl font-semibold mt-4">Post Food</h3>
             <p>Add leftover or extra food to help others in need.</p>
           </div>
           <div>
-            <img src="/src/assets/download.jpeg" className="mx-auto h-20" />
+            <img src={pic2} className="mx-auto h-20" />
             <h3 className="text-xl font-semibold mt-4">Find Food</h3>
             <p>Browse available meals posted by the community.</p>
           </div>
           <div>
-            <img src="/src/assets/american.avif" className="mx-auto h-20" />
+            <img src={pic3} className="mx-auto h-20" />
             <h3 className="text-xl font-semibold mt-4">Collect Food</h3>
             <p>Contact the donor and collect the food easily.</p>
           </div>

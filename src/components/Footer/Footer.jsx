@@ -1,11 +1,12 @@
 import React from 'react';
+import lofo from '../../assets/16y.webp';
 const Footer = () => {
   return (
     <div>
       <footer className="footer sm:footer-horizontal  text-neutral-content bg-neutral px-20 py-5">
         <div className='  w-full flex justify-between '>
           <aside>
-            <img src="/src/assets/16y.webp" alt="" className='h-10 w-10 rounded-xl' />
+            <img src={lofo} alt="lofo" className='h-10 w-10 rounded-xl' />
             <p className='text-2xl font-bold'>Food<br /></p>
             since 1992
           </aside>
