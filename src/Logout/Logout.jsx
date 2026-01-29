@@ -1,6 +1,6 @@
 import { getAuth, signOut } from 'firebase/auth';
 import React from 'react';
-import { toast } from 'react-toastify';
+import { toast} from 'react-toastify';
 import app from "../firebase.init.config";
 
   const Logout = ({ setUser }) => {
@@ -14,9 +14,12 @@ import app from "../firebase.init.config";
       .catch((e) => toast.error(e.message));
   };
   return (
+  <div>
+    {/* <ToastContainer position="top-center" /> */}
     <button onClick={handleLogout} className="btn bg-red-500 hover:bg-red-600 text-white w-full hidden">
       Logout
     </button>
+  </div>
   );
 };
 

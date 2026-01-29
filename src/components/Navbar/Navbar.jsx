@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, useNavigate, NavLink } from 'react-router-dom';
 import { getAuth } from 'firebase/auth';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 const Navbar = () => {
   const { user, setUser, loading } = useContext(AuthContext);
@@ -111,6 +111,7 @@ const Navbar = () => {
         ) : (
           <Link to="/Login" className="btn btn-sm bg-green-500"> Login</Link>
         )}
+        <ToastContainer position="top-center"/>
       </div>
     </div>
   );
