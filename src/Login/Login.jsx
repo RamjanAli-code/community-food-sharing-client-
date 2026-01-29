@@ -3,7 +3,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { useNavigate } from "react-router";
 import React from 'react';
-import { ToastContainer, toast } from "react-toastify";
+import {  toast } from "react-toastify";
 import app from "../firebase.init.config";
 import PasswordLogin from "../PasswordLogin/PasswordLogin.jsx";
 import Profile from "../Profile/Profile.jsx";
@@ -58,7 +58,7 @@ const Login = () => {
   };
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <ToastContainer position="top-center" />
+      {/* <ToastContainer position="top-center" autoClose={2000}/> */}
       {user ? (
         <Profile user={user} setUser={setUser} />
       ) : (
@@ -103,4 +103,3 @@ const Login = () => {
 };
 
 export default Login;
-

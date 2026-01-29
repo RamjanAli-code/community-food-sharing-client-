@@ -8,7 +8,7 @@ function App() {
   const [count, setCount] = useState(0)
   return (
     <>
-     <ToastContainer position="top-center" autoClose={3000}  style={{ zIndex: 9999 }}  />
+     <ToastContainer position="top-center" autoClose={1000}  style={{ zIndex: 9999 }}  />
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
