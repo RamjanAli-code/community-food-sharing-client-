@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-//import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Modals from "../Modals/Modals";
 import FoodRequestsTable from "../FoodRequestsTable/FoodRequestsTable";
-//import Modal from "../Modal/Modal";
-//import Modal from "../Modal/Modal.jsx";
 const FoodDetails = () => {
   const { id } = useParams();
   const [food, setFood] = useState(null);
@@ -18,7 +16,6 @@ const FoodDetails = () => {
       });
   }, [id]);
   const [modalOpen, setModalOpen] = useState(false);
- // const alerted = () => toast("Submission Successful");
   if (!food) {
     return <div className="text-center mt-10">Loading...</div>;
   }
@@ -52,7 +49,7 @@ const FoodDetails = () => {
           <button   onClick={() => setModalOpen(true)} className="btn bg-yellow-600 mt-4">
             Request Food
           </button>
-          {/* <ToastContainer /> */}
+          <ToastContainer />
         </div>
       </div>
       <Modals isOpen={modalOpen} onClose={() => setModalOpen(false)} foodId={food._id} />
