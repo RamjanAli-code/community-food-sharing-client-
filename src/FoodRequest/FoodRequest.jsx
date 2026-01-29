@@ -7,7 +7,7 @@ const FoodRequest = () => {
   useEffect(() => {
     if (!user) return;
     user.getIdToken().then(token => {
-      fetch("http://localhost:3000/my-food-requests", {
+      fetch("https://community-food-sharing-server-livid.vercel.app/my-food-requests", {
         headers: {
           authorization: `Bearer ${token}`
         }

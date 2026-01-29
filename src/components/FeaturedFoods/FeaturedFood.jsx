@@ -3,7 +3,7 @@
 //  const [foods, setFoods] = useState([]);
 
 //   useEffect(() => {
-//     fetch("http://localhost:3000/featured-products") 
+//     fetch("https://community-food-sharing-server-livid.vercel.app/featured-products") 
 //       .then((res) => res.json())
 //       .then((data) => setFoods(data));
 //   }, []);

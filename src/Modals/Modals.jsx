@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { getAuth } from "firebase/auth";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 
   const Modals = ({ isOpen, onClose, foodId }) => {
   const [location, setLocation] = useState("");
@@ -27,7 +27,7 @@ import { toast } from "react-toastify";
         reason,
         contact,
       };
-      const res = await fetch("http://localhost:3000/food-requests", {
+      const res = await fetch("https://community-food-sharing-server-livid.vercel.app/food-requests", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -37,11 +37,11 @@ import { toast } from "react-toastify";
       });
       const data = await res.json();
       if (res.status === 401) {
-        toast.error("Unauthorized! Token invalid or expired.");
+        toast.error("Unauthorized! Token invalid or expired");
       } else if (!res.ok) {
-        toast.error(data.message || "Failed to submit request");
+        toast.error(data.message ||"Failed to submit request");
       } else {
-        toast.success("Food request submitted successfully!");
+        toast.success("Food request submitted successfully");
         setLocation("");
         setReason("");
         setContact("");
@@ -49,13 +49,14 @@ import { toast } from "react-toastify";
       }
     } catch (error) {
       console.error("Request Error:", error);
-      toast.error("Server error. Please try again.");
+      toast.error("Server error");
     }
     setLoading(false);
   };
   if (!isOpen) return null;
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+       <ToastContainer position="top-center" />
       <div className="bg-white p-6 rounded-lg w-96 relative">
         <button onClick={onClose} className="absolute top-2 right-2 text-gray-500 hover:text-gray-700">
           Cancel

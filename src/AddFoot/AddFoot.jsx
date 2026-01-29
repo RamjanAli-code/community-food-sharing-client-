@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from "react-toastify";
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { getAuth } from "firebase/auth";
 
@@ -39,7 +39,7 @@ const AddFoot = () => {
       }
 
       const idToken = await user.getIdToken();
-      const response = await fetch('http://localhost:3000/foods', {
+      const response = await fetch('https://community-food-sharing-server-livid.vercel.app/foods', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -51,8 +51,10 @@ const AddFoot = () => {
       const result = await response.json();
       if (response.ok) {
         toast.success('Food added successfully');
-        navigate('/manageFood');
-      } else {
+      setTimeout(() => {
+     navigate('/manageFood');
+     }, 1200);
+} else {
         toast.error(result.message || 'Failed to add');
       }
 
@@ -64,6 +66,7 @@ const AddFoot = () => {
 
   return (
     <div className="p-4 h-200 w-auto mx-auto">
+      <ToastContainer position="top-center" />
       <h2 className="text-[30px] font-bold pt-3 text-center fond-4 mb-4">Add Food</h2>
       <form onSubmit={handleSubmit} className="space-y-3">
         <h3 className=" flex gap-5 items-center justify-center">

@@ -2,14 +2,14 @@ import React from 'react';
 import { useEffect, useState, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-
+import { ToastContainer, toast } from "react-toastify";
 const DeleteFood = () => {
   const { id } = useParams();
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
   const [food, setFood] = useState(null);
   useEffect(() => {
-    fetch(`http://localhost:3000/foods/${id}`)
+    fetch(`https://community-food-sharing-server-livid.vercel.app/foods/${id}`)
       .then(res => res.json())
       .then(data => setFood(data))
       .catch(err => console.error(err));
@@ -20,7 +20,7 @@ const DeleteFood = () => {
       alert("You must be logged in to delete food");
       return;
     }
-    fetch(`http://localhost:3000/foods/${id}`, {
+    fetch(`https://community-food-sharing-server-livid.vercel.app/foods/${id}`, {
       method: "DELETE",
       headers: {
         "Authorization": `Bearer ${user.accessToken}`,
@@ -31,8 +31,10 @@ const DeleteFood = () => {
         return res.json();
       })
       .then(data => {
-        alert("Food deleted successfully ");
-        navigate("/manageFood");
+              toast.success('Food deleted successfully ');
+              setTimeout(() => {
+              navigate('/manageFood');
+              }, 1200);
       })
       .catch(err => console.error("Delete error:", err));
   };
@@ -40,6 +42,7 @@ const DeleteFood = () => {
 
   return (
     <div className="w-11/12 max-w-xl mx-auto my-10 p-5 border rounded shadow">
+      <ToastContainer position="top-center" />
       <h2 className="text-2xl font-bold mb-4">Delete Food</h2>
       <p>Are you sure you want to delete? <strong>{food.name}</strong>?</p>
       <div className="mt-4 flex gap-4">

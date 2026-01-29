@@ -1,5 +1,6 @@
 import { useState } from 'react'
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import viteLogo from '/vite.svg'
 import './App.css'
 
@@ -7,6 +8,7 @@ function App() {
   const [count, setCount] = useState(0)
   return (
     <>
+     <ToastContainer position="top-center" autoClose={3000}  style={{ zIndex: 9999 }}  />
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />

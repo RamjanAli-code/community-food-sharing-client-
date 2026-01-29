@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-
+import { ToastContainer, toast } from "react-toastify";
 const UpdateFood = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ const UpdateFood = () => {
     notes: "",
   });
   useEffect(() => {
-    fetch(`http://localhost:3000/foods/${id}`)
+    fetch(`https://community-food-sharing-server-livid.vercel.app/foods/${id}`)
       .then(res => res.json())
       .then(data => setFood(data))
       .catch(err => console.error(err));
@@ -36,7 +36,7 @@ const UpdateFood = () => {
       ...food,
       expireDate: food.expireDate ? new Date(food.expireDate) : null
     };
-    fetch(`http://localhost:3000/foods/${id}`, {
+    fetch(`https://community-food-sharing-server-livid.vercel.app/foods/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -53,15 +53,17 @@ const UpdateFood = () => {
         return res.json();
       })
       .then(data => {
-        console.log("Update response:", data);
-        alert("Food updated successfully");
-        navigate("/manageFood");
+              toast.success('Food updated successfully ');
+              setTimeout(() => {
+              navigate('/manageFood');
+              }, 1200);
       })
       .catch(err => console.error("Fetch error:", err));
   };
 
   return (
     <div className="w-11/12 max-w-xl mx-auto my-10">
+        <ToastContainer position="top-center" />
       <h2 className="text-3xl font-bold mb-6">Update Food</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
 

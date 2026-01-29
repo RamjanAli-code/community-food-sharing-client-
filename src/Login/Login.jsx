@@ -2,7 +2,8 @@ import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, signInWith
 import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { useNavigate } from "react-router";
-import { toast } from "react-toastify";
+import React from 'react';
+import { ToastContainer, toast } from "react-toastify";
 import app from "../firebase.init.config";
 import PasswordLogin from "../PasswordLogin/PasswordLogin.jsx";
 import Profile from "../Profile/Profile.jsx";
@@ -57,7 +58,7 @@ const Login = () => {
   };
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      {/* <ToastContainer position="top-center" /> */}
+      <ToastContainer position="top-center" />
       {user ? (
         <Profile user={user} setUser={setUser} />
       ) : (

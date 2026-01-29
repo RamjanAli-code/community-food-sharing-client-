@@ -8,7 +8,7 @@ const ManageFood = () => {
   const navigate = useNavigate();
   useEffect(() => {
     if (!user?.email || !user?.accessToken) return;
-    fetch("http://localhost:3000/my-foods", {
+    fetch("https://community-food-sharing-server-livid.vercel.app/my-foods", {
       headers: {
         authorization: `Bearer ${user.accessToken}`,
       },

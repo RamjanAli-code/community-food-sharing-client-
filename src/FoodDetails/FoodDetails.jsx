@@ -10,7 +10,7 @@ const FoodDetails = () => {
   const { id } = useParams();
   const [food, setFood] = useState(null);
   useEffect(() => {
-    fetch(`http://localhost:3000/available-foods/${id}`)
+    fetch(`https://community-food-sharing-server-livid.vercel.app/available-foods/${id}`)
       .then(res => res.json())
       .then(data => {
         console.log("Single food:", data);

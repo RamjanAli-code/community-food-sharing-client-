@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 const Home = () => {
   const [featuredFoods, setFeaturedFoods] = useState([]);
-  const apiUrl = "http://localhost:3000/available-foods";
+  const apiUrl = "https://community-food-sharing-server-livid.vercel.app/available-foods";
 
   useEffect(() => {
     fetch(apiUrl)

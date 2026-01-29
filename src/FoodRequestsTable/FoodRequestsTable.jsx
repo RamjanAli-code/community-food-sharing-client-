@@ -10,7 +10,7 @@ import { toast } from "react-toastify";
     if (!user) return;
     try {
       const token = await user.getIdToken();
-      const res = await fetch(`http://localhost:3000/food-requests/${foodId}`, {
+      const res = await fetch(`https://community-food-sharing-server-livid.vercel.app/food-requests/${foodId}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -31,7 +31,7 @@ import { toast } from "react-toastify";
     try {
       if (!user) return;
       const token = await user.getIdToken();
-      const res = await fetch(`http://localhost:3000/food-requests/${id}/${action}`,{
+      const res = await fetch(`https://community-food-sharing-server-livid.vercel.app/food-requests/${id}/${action}`,{
         method: "PUT",
         headers: { Authorization: `Bearer ${token}` }
       });

@@ -6,7 +6,7 @@ const AvailableFood = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:3000/available-foods")
+    fetch("https://community-food-sharing-server-livid.vercel.app/available-foods")
       .then(res => res.json())
       .then(data => {
         console.log("Available Foods:", data);
