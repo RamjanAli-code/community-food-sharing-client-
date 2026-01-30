@@ -22,11 +22,11 @@ const FoodRequest = () => {
       <div className="grid md:grid-cols-2 gap-6">
         {requests.map(req => (
           <div key={req._id} className="p-5 border rounded-xl shadow bg-white">
-            <h3 className="text-xl font-semibold">{req.food.name}</h3>
-            <p> Donator: {req.food.donator.name}</p>
-            <p> Pickup: {req.food.pickupLocation}</p>
-            <p> Contact: {req.contact}</p>
-            <p> Reason: {req.reason}</p>
+            <h3 className="text-xl font-semibold">{req.food?.name || "Food Not Available"}</h3>
+            <p> Donator: {req.food?.donator?.name  || "Food Deleted"}</p>
+            <p> Pickup: {req.food?.pickupLocation || ""}</p>
+            <p> Contact: {req.contact  || ""}</p>
+            <p> Reason: {req.reason  || ""}</p>
             <p className="mt-2">
               Status:
               <span className={`ml-2 px-2 py-1 rounded text-white text-sm
